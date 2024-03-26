@@ -1,4 +1,3 @@
-from operator import index  # Importing index from operator module (unused in provided code)
 import streamlit as st  # Importing Streamlit library and aliasing it as st
 import pandas as pd  # Importing pandas library and aliasing it as pd
 import os  # Importing os module for interacting with the operating system
@@ -10,11 +9,8 @@ import os  # Importing os module for interacting with the operating system
 from streamlit_pandas_profiling import st_profile_report  # Importing Streamlit Pandas Profiling module
 from ydata_profiling import ProfileReport  # Importing ydata-profiling module
 
-# Importing ML modules
-from pycaret.classification import setup, compare_models, pull, save_model, load_model  # Importing PyCaret classification functions
-
 # ML stuff
-from pycaret.classification  import setup, compare_models, pull, save_model, load_model
+from pycaret.classification import setup, compare_models, pull, save_model, load_model  # Importing PyCaret classification functions
 
 # Setting up Streamlit sidebar
 with st.sidebar:
