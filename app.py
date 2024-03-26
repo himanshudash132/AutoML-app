@@ -22,8 +22,7 @@ with st.sidebar:
      st.title("</> AutoStreamML")  # Setting the title in the sidebar
      choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling","4.Download"])  # Creating a radio button group for navigation
      st.info("Go ahead knock yourself out guys, do whatever you want")  # Displaying an info message in the sidebar
-     st.info("This application allows you to build an automated ML pipeline using Streamlit, ydata-profiling and PyCaret")  # Displaying an info message in the sidebar
-
+     
 # Checking if the file 'sourcedata.csv' exists
 if os.path.exists('sourcedata.csv'):
    df = pd.read_csv('sourcedata.csv',index_col=None)  # Reading the CSV file into a DataFrame
