@@ -1,6 +1,5 @@
 from operator import index  # Importing index from operator module (unused in provided code)
 import streamlit as st  # Importing Streamlit library and aliasing it as st
-import plotly.express as px  # Importing Plotly Express library and aliasing it as px
 import pandas as pd  # Importing pandas library and aliasing it as pd
 import os  # Importing os module for interacting with the operating system
 
