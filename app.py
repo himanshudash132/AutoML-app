@@ -13,8 +13,7 @@ from pycaret.classification import setup, compare_models, pull, save_model, load
 
 # Setting up Streamlit sidebar
 with st.sidebar:
-     # st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
-     st.image("🤖", width=500) 
+     st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
      st.title("</> AutoStreamML")  # Setting the title in the sidebar
      choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling","4.Download"])  # Creating a radio button group for navigation
      st.info("Go ahead knock yourself out guys, do whatever you want")  # Displaying an info message in the sidebar
@@ -85,7 +84,6 @@ if choise == "3.Modelling":
       save_model(best_model, 'best_model')  # Saving the best model
 
 if choise == "4.Download":
-   st.balloons()  
    st.title(" Download Model ")
    with open('best_model.pkl','rb') as f:    # Opening the saved model file in binary mode   
         st.download_button('Download Model',f,file_name="best_model.pkl") # Creating a download button for the model
