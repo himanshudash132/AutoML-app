@@ -84,6 +84,7 @@ if choise == "3.Modelling":
       save_model(best_model, 'best_model')  # Saving the best model
 
 if choise == "4.Download":
+   st.balloons()  
    st.title(" Download Model ")
    with open('best_model.pkl','rb') as f:    # Opening the saved model file in binary mode   
         st.download_button('Download Model',f,file_name="best_model.pkl") # Creating a download button for the model
