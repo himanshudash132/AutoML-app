@@ -1,16 +1,15 @@
-import streamlit as st  # Importing Streamlit library and aliasing it as st
-import pandas as pd  # Importing pandas library and aliasing it as pd
-import os  # Importing os module for interacting with the operating system
+import streamlit as st  
+import pandas as pd 
+import os  
 
 # streamlit run app.py
 
 # Importing profiling libraries
-# from pandas_profiling import ProfileReport  (Commented out, not used in provided code)
-from streamlit_pandas_profiling import st_profile_report  # Importing Streamlit Pandas Profiling module
-from ydata_profiling import ProfileReport  # Importing ydata-profiling module
+from streamlit_pandas_profiling import st_profile_report 
+from ydata_profiling import ProfileReport  
 
 # ML stuff
-from pycaret.classification import setup, compare_models, pull, save_model, load_model  # Importing PyCaret classification functions
+from pycaret.classification import setup, compare_models, pull, save_model, load_model 
 
 # Setting up Streamlit sidebar
 with st.sidebar:
