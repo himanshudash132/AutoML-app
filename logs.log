@@ -2467,3 +2467,11 @@ AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
                                         verbose=0, warm_start=False))],
          verbose=False)
 2024-03-26 10:30:00,478:INFO:save_model() successfully completed......................................
+2024-03-26 11:00:24,871:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-03-26 11:00:24,871:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-03-26 11:00:24,871:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2024-03-26 11:00:24,871:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.

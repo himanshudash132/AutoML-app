@@ -25,7 +25,17 @@ if os.path.exists('sourcedata.csv'):
    df = pd.read_csv('sourcedata.csv',index_col=None)
 
 if choise == "Upload":
-    st.title("Upload Your Dataset")
+    with st.expander('About this app'):
+      st.markdown('**What can this app do?**')
+      st.info('This application allows you to build an automated ML pipeline using Streamlit, ydata-profiling and PyCaret')
+      st.markdown('**how to use the AutoStreamML?**')
+      st.warning("""Upload Your Dataset: Begin by uploading your dataset using the "Upload" option in the sidebar. Choose the file from your local machine and wait for it to be processed.
+
+      Perform Exploratory Data Analysis (EDA): Once the dataset is uploaded, navigate to the "Profiling" section. Here, you'll find automated tools for conducting exploratory data analysis. Review the generated reports to gain insights into your data.
+
+      Build Classification Models: Move to the "Modelling" section to build classification models based on your dataset. Choose the target column and click "Run Modelling" to initiate the process. The application will guide you through model setup, comparison, and selection of the best model.
+
+      Download Your Model: After selecting the best classification model, head to the "Download" section. Here, you can download the trained machine learning model for later use in your applications.""")
     file = st.file_uploader("Upload Your Dataset")
     if file:
         df = pd.read_csv(file,index_col=None)
