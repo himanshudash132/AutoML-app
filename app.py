@@ -21,7 +21,7 @@ from pycaret.classification  import setup, compare_models, pull, save_model, loa
 with st.sidebar:
      st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
      st.title("</> AutoStreamML")  # Setting the title in the sidebar
-     choise = st.radio("Navigation",["Upload","Profiling","Modelling","Download"])  # Creating a radio button group for navigation
+     choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling","4.Download"])  # Creating a radio button group for navigation
      st.info("Go ahead knock yourself out guys, do whatever you want")  # Displaying an info message in the sidebar
      st.info("This application allows you to build an automated ML pipeline using Streamlit, ydata-profiling and PyCaret")  # Displaying an info message in the sidebar
 
@@ -30,8 +30,9 @@ if os.path.exists('sourcedata.csv'):
    df = pd.read_csv('sourcedata.csv',index_col=None)  # Reading the CSV file into a DataFrame
 
 # # Handling different choices made by the user
-if choise == "Upload":   # Setting the title for the upload section 
-    with st.expander('About this app'):
+if choise == "1.Upload":  
+    st.title("Upload Your Dataset")  # Setting the title for the upload section 
+    with st.expander('About this app'): # About this app
       st.markdown('**What can this app do?**')
       st.info('This application allows you to build an automated ML pipeline using Streamlit, ydata-profiling and PyCaret')
       st.markdown('**how to use the AutoStreamML?**')
@@ -70,14 +71,14 @@ if choise == "Upload":   # Setting the title for the upload section
         st.dataframe(df)  # Displaying the DataFrame in the app
 
 
-if choise == "Profiling":
-    st.title("Automated Exploratory Data Analysis")  # Setting the title for the profiling section
+if choise == "2.Profiling":
+    st.title("📊 Automated Exploratory Data Analysis")  # Setting the title for the profiling section
     st.write("Read Documentation ---> https://docs.profiling.ydata.ai/latest/")  # Providing a link to documentation
     profile_df = df.profile_report()  # Generating a profile report for the DataFrame
     st_profile_report(profile_df)  # Displaying the profile report in the app
 
-if choise == "Modelling":
-   st.title("Machine Learning go")  # Setting the title for the modeling section
+if choise == "3.Modelling":
+   st.title("🤖  ML Model Building")  # Setting the title for the modeling section
    st.write("Read Documentation ---> https://pycaret.org/")  # Providing a link to documentation
    chosen_target = st.selectbox('Choose the Target Column', df.columns)  # Creating a selectbox widget for choosing the target column
    if st.button('Run Modelling'):  # Creating a button widget for running modeling
@@ -89,6 +90,7 @@ if choise == "Modelling":
       st.dataframe(compare_df)  # Displaying the comparison results in the app
       save_model(best_model, 'best_model')  # Saving the best model
 
-if choise == "Download":
+if choise == "4.Download":
+   st.title(" Download Model ")
    with open('best_model.pkl','rb') as f:    # Opening the saved model file in binary mode   
         st.download_button('Download Model',f,file_name="best_model.pkl") # Creating a download button for the model
