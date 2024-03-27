@@ -43,7 +43,7 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 
  ## Deployment Link: 
  
- [AutoStreamML ](https://autostreamml.herokuapp.com)
+ [AutoML ](https://friday10.streamlit.app/)
 
 ## License
 
