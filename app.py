@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd 
 import os  
 
-# streamlit run app.py
-
 # Importing profiling libraries
 from streamlit_pandas_profiling import st_profile_report 
 from ydata_profiling import ProfileReport  
@@ -24,6 +22,7 @@ if os.path.exists('sourcedata.csv'):
 
 # # Handling different choices made by the user
 if choise == "1.Upload":  
+    st.balloons()
     st.title("Upload Your Dataset")  # Setting the title for the upload section 
     with st.expander('About this app'): # About this app
       st.markdown('**What can this app do?**')
@@ -84,6 +83,7 @@ if choise == "3.Modelling":
       save_model(best_model, 'best_model')  # Saving the best model
 
 if choise == "4.Download":
+   st.balloons()  
    st.title(" Download Model ")
    with open('best_model.pkl','rb') as f:    # Opening the saved model file in binary mode   
         st.download_button('Download Model',f,file_name="best_model.pkl") # Creating a download button for the model
