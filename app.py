@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd 
 import os  
 
-# streamlit run app.py
-
 # Importing profiling libraries
 from streamlit_pandas_profiling import st_profile_report 
 from ydata_profiling import ProfileReport  
