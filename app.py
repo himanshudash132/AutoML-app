@@ -24,6 +24,7 @@ if os.path.exists('sourcedata.csv'):
 
 # # Handling different choices made by the user
 if choise == "1.Upload":  
+    st.balloons()
     st.title("Upload Your Dataset")  # Setting the title for the upload section 
     with st.expander('About this app'): # About this app
       st.markdown('**What can this app do?**')
