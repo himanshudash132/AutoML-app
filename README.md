@@ -10,7 +10,7 @@ AutoStreamML offers functionalities for data upload, exploratory data analysis (
 
 - ** 📁 Data Upload**: Users can upload their datasets for classification analysis and model building.
 - ** 📊 Exploratory Data Analysis (Profiling)**: Automated generation of detailed data analysis reports using ydata-profiling.
-- ** 🤖 Machine Learning Modeling**: Streamlined model building process with PyCaret, including setup, model comparison, and saving the best model for classification tasks.
+- **🤖Machine Learning Modeling**: Streamlined model building process with PyCaret, including setup, model comparison, and saving the best model for classification tasks.
 - **Model Download**: Ability to download the trained machine learning model for later use.
 
 ## Installation
