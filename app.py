@@ -11,7 +11,7 @@ from pycaret.classification import setup, compare_models, pull, save_model, load
 
 # Setting up Streamlit sidebar
 with st.sidebar:
-     st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
+     # st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
      st.title("</> AutoStreamML")  # Setting the title in the sidebar
      choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling","4.Download"])  # Creating a radio button group for navigation
      st.info("Go ahead knock yourself out guys, do whatever you want")  # Displaying an info message in the sidebar
