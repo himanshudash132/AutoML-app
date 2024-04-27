@@ -7,10 +7,6 @@ from streamlit_pandas_profiling import st_profile_report
 from ydata_profiling import ProfileReport  
 
 # ML stuff
-
-
-
-
 # Setting up Streamlit sidebar
 with st.sidebar:
    #   st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
