@@ -7,13 +7,15 @@ from streamlit_pandas_profiling import st_profile_report
 from ydata_profiling import ProfileReport  
 
 # ML stuff
-from pycaret.classification import setup, compare_models, pull, save_model, load_model 
+
+
+
 
 # Setting up Streamlit sidebar
 with st.sidebar:
    #   st.image("https://www.onepointltd.com/wp-content/uploads/2020/03/inno2.png")  # Displaying an image in the sidebar
      st.title("</> AutoStreamML")  # Setting the title in the sidebar
-     choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling","4.Download"])  # Creating a radio button group for navigation
+     choise = st.radio("Navigation",["1.Upload","2.Profiling","3.Modelling classification","4.Modelling regression","5.Download"])  # Creating a radio button group for navigation
      st.info("Go ahead knock yourself out guys, do whatever you want")  # Displaying an info message in the sidebar
      
 # Checking if the file 'sourcedata.csv' exists
@@ -69,7 +71,8 @@ if choise == "2.Profiling":
     profile_df = df.profile_report()  # Generating a profile report for the DataFrame
     st_profile_report(profile_df)  # Displaying the profile report in the app
 
-if choise == "3.Modelling":
+if choise == "3.Modelling classification":
+   from pycaret.classification import setup, compare_models, pull, save_model
    st.title("🤖  ML Model Building")  # Setting the title for the modeling section
    st.write("Read Documentation ---> https://pycaret.org/")  # Providing a link to documentation
    chosen_target = st.selectbox('Choose the Target Column', df.columns)  # Creating a selectbox widget for choosing the target column
@@ -82,7 +85,36 @@ if choise == "3.Modelling":
       st.dataframe(compare_df)  # Displaying the comparison results in the app
       save_model(best_model, 'best_model')  # Saving the best model
 
-if choise == "4.Download":
+if choise == "4.Modelling regression":
+   from pycaret.regression import setup, compare_models, pull, save_model
+   st.title("🤖  ML Model Building")  # Setting the title for the modeling section
+   st.write("Read Documentation ---> https://pycaret.org/")  # Providing a link to documentation
+   chosen_target = st.selectbox('Choose the Target Column', df.columns)  # Creating a selectbox widget for choosing the target column
+   if st.button('Run Modelling'):  # Creating a button widget for running modeling
+      setup(df, target=chosen_target)  # Setting up the PyCaret environment for modeling
+      setup_df = pull()  # Pulling the processed data after setup
+      st.dataframe(setup_df)  # Displaying the processed data in the app
+      best_model = compare_models()  # Comparing models and selecting the best one
+      compare_df = pull()  # Pulling the comparison results
+      st.dataframe(compare_df)  # Displaying the comparison results in the app
+      save_model(best_model, 'best_model')  # Saving the best model
+
+if choise == "55.Modelling clustering":
+   from pycaret.classification import *
+   from pycaret.clustering import ClusteringExperiment
+   st.title("🤖  ML Model Building")  # Setting the title for the modeling section
+   st.write("Read Documentation ---> https://pycaret.org/")  # Providing a link to documentation
+   chosen_target = st.selectbox('Choose the Target Column', df.columns)  # Creating a selectbox widget for choosing the target column
+   if st.button('Run Modelling'):  # Creating a button widget for running modeling
+      setup(df, target=chosen_target)  # Setting up the PyCaret environment for modeling
+      setup_df = pull()  # Pulling the processed data after setup
+      st.dataframe(setup_df)  # Displaying the processed data in the app
+      best_model = compare_models()  # Comparing models and selecting the best one
+      compare_df = pull()  # Pulling the comparison results
+      st.dataframe(compare_df)  # Displaying the comparison results in the app
+      save_model(best_model, 'best_model')  # Saving the best model
+
+if choise == "5.Download":
    st.balloons()  
    st.title(" Download Model ")
    with open('best_model.pkl','rb') as f:    # Opening the saved model file in binary mode   
