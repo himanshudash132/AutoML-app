@@ -2,6 +2,11 @@
 
 AutoStreamML is a Streamlit application designed for automated machine learning pipelines, focused on classification tasks. In the upcoming future, additional functionalities for regression and clustering applications will be added. Stay tuned for updates!
 
+
+
+![Screenshot](https://github.com/himanshudash132/AutoML_Streamlit_Classification/blob/main/IMG.png)
+
+
 ## Introduction
 
 AutoStreamML offers functionalities for data upload, exploratory data analysis (profiling), and model building specifically tailored for classification tasks. It provides an intuitive interface for users to interact with and automate their classification tasks.
