@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10">
+        <h1 class="text-4xl font-bold text-center text-blue-600">Classification Model</h1>
+        <form action="/classification" method="POST" class="mt-10 text-center">
+            <select name="target" class="border border-gray-300 p-2 rounded">
+                {% for col in columns %}
+                <option value="{{ col }}">{{ col }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4">Run Modeling</button>
+        </form>
+        <div class="mt-10">
+            {% if setup_df %}
+            <h2 class="text-2xl font-bold text-center text-gray-600">Setup Data</h2>
+            <div class="overflow-auto">{{ setup_df|safe }}</div>
+            {% endif %}
+            {% if compare_df %}
+            <h2 class="text-2xl font-bold text-center text-gray-600">Comparison Data</h2>
+            <div class="overflow-auto">{{ compare_df|safe }}</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
